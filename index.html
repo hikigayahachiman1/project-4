@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>KEPO YA ??</title>
+<link rel='icon' href='https://i.ibb.co/LDBHJGvR/tsssss.gif'>
+<meta name="theme color" content="#00BFFF">
+<script src='https://cdn.statically.io/gh/analisyuki/animasi/9ab4049c/bintang.js' type='text/javascript'></script>
+</head>
+<style>
+  body {
+      background-image: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXVuMmExcWQwa21oYmVybng3dXdzcW0waHRseHA3MHoxeDBicHJqcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FWAcpJsFT9mvrv0e7a/giphy.gif");
+      background-repeat: no-repeat;
+      background-size: fill;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+  }
+  h1 {
+      color: #00BFFF;
+  }
+  img {
+      opacity: 0.5;
+      width: 200px;
+      height: 300px;
+  }
+  form {
+      text-align: center;
+      margin-top: 20px;
+  }
+  input[type="password"] {
+      padding: 5px;
+  }
+  input[type="submit"] {
+      background-color: #00BFFF;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+  }
+</style>
+<body>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8e7906c4cc21e394","version":"2024.10.5","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"30bb3c649444481c9930cf0958a1af26","b":1}' crossorigin="anonymous"></script>
+<div id="prankScreen" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:black; z-index:999999; overflow:hidden;">
+    <img src="https://i.ibb.co/V0bx8NLs/APA-LOE-LIAT-LIAT.png" style="width:100vw; height:100vh; ">
+</div>
+
+<script>
+const prank = document.getElementById('prankScreen');
+
+function showPrank() {
+    prank.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Biar ga bisa scroll
+}
+
+// Deteksi tombol terlarang
+document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.keyCode === 123) { showPrank(); e.preventDefault(); return; }
+    // Ctrl + U
+    if (e.ctrlKey && e.keyCode === 85) { showPrank(); e.preventDefault(); return; }
+    // Ctrl + Shift + I/J/C
+    if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { 
+        showPrank(); e.preventDefault(); return; 
+    }
+});
+
+// Blokir cara keluar (F5, Esc, dll)
+document.addEventListener('keydown', e => {
+    if (prank.style.display === 'block') {
+        if (e.key === 'Escape' || e.keyCode === 116 || (e.ctrlKey && e.keyCode === 82)) {
+            e.preventDefault();
+        }
+    }
+});
+</script>
+</body>
+</html>
